@@ -1,0 +1,9 @@
+#these are the files to not include in the docker image build
+.github/
+.gitignore
+.git
+__pycache__
+dockerTest/*
+venv/*
+testYAML
+testenv/*
