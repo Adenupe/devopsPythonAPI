@@ -1,14 +1,15 @@
-import os
+#import os
 from fastapi import FastAPI
-from app.routes import tasks
-from dotenv import load_dotenv
+from app.api.routes import tasks
+from app.core import config
+#from dotenv import load_dotenv
 
 
-load_dotenv()
+#load_dotenv()
 
-app_name = os.getenv("APP_NAME")
-mongo_url = os.getenv("MONGO_URL")
-print(mongo_url)
+#app_name = os.getenv("APP_NAME")
+#mongo_url = os.getenv("MONGO_URL")
+#print(mongo_url)
 
 app = FastAPI()
 
@@ -24,4 +25,4 @@ def health():
 
 @app.get("/info")
 def info():
-    return {"name of application is: ": app_name}
+    return {"name of application is: ": config.app_name}
